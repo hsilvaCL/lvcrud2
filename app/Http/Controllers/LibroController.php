@@ -28,7 +28,7 @@ class LibroController extends Controller
     public function create()
     {
         //
-		return view('Libro.create');
+	return view('Libro.create');
     }
 
     /**
@@ -39,8 +39,7 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //$this->validate($request, $rules)
+        $this->validate($request,['titulo'=>'required','autor'=>'required']);
         Libro::create($request->all());
         return redirect()->route('libro.index')->with('sucess','Registro creado');
     }
@@ -77,8 +76,9 @@ class LibroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $nombre="HSO";
-        return view('Libro.update');
+        $this->validate($request,['titulo'=>'required','autor'=>'required']);
+        Libro::find($id)->update($request->all());
+        return redirect()->route('libro.index')->with('success','Libro Actualizado');
     }
 
     /**
@@ -89,6 +89,8 @@ class LibroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Libro::find($id)->delete();
+        return redirect()->route('libro.index')->with('success','Libro eliminado');
+
     }
 }

@@ -10,18 +10,18 @@
     </ul>
 </div>
 @endif
-<form method="POST" action="{{route('libro.update',$libro->id)}}" role="form">
+<h1>Nuevo Libro</h1>
+<form method="POST" action="{{route('libro.store')}}" role="form">
     {{csrf_field()}}
-    <input name="_method" type="hidden" value="PATCH">
     <div class="form-group">
-        <input type="text" name="titulo" id="titulo" class="form-control" value="{{$libro->titulo}}">
+        <input type="text" name="titulo" id="titulo" class="form-control" value="">
         
     </div>
     <div class="form-group">
-        <input type="text" name="autor" id="autor" class="form-control" value="{{$libro->autor}}">
+        <input type="text" name="autor" id="autor" class="form-control" value="">
         
     </div>
     
-    <input type="submit" value="Actualizar" class="btn btn-success">
+    <input type="submit" value="Crear" class="btn btn-success">
     <a href="{{route('libro.index')}}" class="btn btn-info">Volver</a>
 </form>
