@@ -64,7 +64,8 @@ class LibroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $libro=  Libro::find($id);
+        return view('Libro.edit',  compact('libro'));
     }
 
     /**
@@ -76,7 +77,8 @@ class LibroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nombre="HSO";
+        return view('Libro.update');
     }
 
     /**
