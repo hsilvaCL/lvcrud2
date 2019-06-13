@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('libro','LibroController');
+Route::resource('persona','PersonaController');

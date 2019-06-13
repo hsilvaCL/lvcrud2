@@ -10,18 +10,18 @@
     </ul>
 </div>
 @endif
-<h1>Nuevo Libro</h1>
-<form method="POST" action="{{route('libro.store')}}" role="form">
+<h1>Nueva Persona</h1>
+<form method="POST" action="{{route('persona.store')}}" role="form">
     {{csrf_field()}}
     <div class="form-group">
-        <input type="text" name="titulo" id="titulo" placeholder="agregue el titulo" class="form-control" value="">
+        <input type="text" name="nombre" id="titulo" placeholder="agregue el nombre" class="form-control" value="">
         
     </div>
     <div class="form-group">
-        <input type="text" name="autor" id="autor" placeholder="agregue el autor" class="form-control" value="">
+        <input type="text" name="apellido" id="autor" placeholder="agregue el apellido" class="form-control" value="">
         
     </div>
     
     <input type="submit" value="Crear" class="btn btn-success">
-    <a href="{{route('libro.index')}}" class="btn btn-info">Volver</a>
+    <a href="{{route('persona.index')}}" class="btn btn-info">Volver</a>
 </form>
